@@ -1,10 +1,15 @@
 import React from "react";
 
 function Conditional(props) {
-	console.log(props.isLoading)
-	return (
-		<h1>Temp</h1>	
-	)
+	if (props.isLoading === true) {
+		return (
+			<div>Loading...</div>
+		 ) 
+	} else {
+		return (
+			<h1>Some conditional rendering...</h1>	
+		)
+	}
 }
 
 export default Conditional;
