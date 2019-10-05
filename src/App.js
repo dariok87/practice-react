@@ -8,22 +8,23 @@ class App extends React.Component {
       isLoading: true
     }
   }
-}
 
-componentDidMount() {
-  setTimeout(() => {
-    this.setState({
-        isLoading : false
-    })
-  }, 1500)
-}
 
-render() {
-  return (
-    <div>
-      <Conditional isLoading={this.state.isLoading}/>
-    </div>
-  )
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+          isLoading : false
+      })
+    }, 1500)
+  }
+
+  render() {
+    return (
+      <div>
+        <Conditional isLoading={this.state.isLoading}/>
+      </div>
+    )
+  }
 }
 
 export default App;
