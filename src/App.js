@@ -6,7 +6,7 @@ class App extends React.Component {
     super()
     this.state = {
       unreadMessages: [
-        
+        "bla"
       ]
     }
   }
@@ -14,7 +14,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {this.state.unreadMessages.length > 0 ? <h2>You have {this.state.unreadMessages.length} unread messages!</h2> : null}
+          {
+            this.state.unreadMessages.length > 0 ? 
+            <h2>You have {this.state.unreadMessages.length} unread messages!</h2> :
+            null
+          }
       </div>
     )
   }
