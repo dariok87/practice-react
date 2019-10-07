@@ -30,9 +30,10 @@ class App extends React.Component {
   }
 
   render() {
+    let textButton = this.state.isLoggedIn ? "LOG OUT" : "LOG IN"
     return (
       <div>
-        <button onClick={this.handleClick}>{this.state.isLoggedIn ? <h1>Log out</h1> : <h1>Log in!</h1>}</button>
+        <button onClick={this.handleClick}>{textButton}</button>
         <Conditional isLoggedIn={this.state.isLoggedIn}/>
       </div>
     )
