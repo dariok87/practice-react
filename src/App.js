@@ -1,4 +1,5 @@
 import React from "react";
+import Conditional from "./Conditional";
 
 /*
 Challenge: 
@@ -11,18 +12,28 @@ Given a stateless functional component :
 4. Display text that says "logged in" if the user is logged in, or "Logged out" if they're not.    
 */
 
-class App extends React() {
+class App extends React.Component {
   constructor() {
     super()
     this.state = {
       isLoggedIn: false
     }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(){
+    this.setState(prevState => {
+      return {
+        isLoggedIn: !prevState.isLoggedIn
+      }
+    })
   }
 
   render() {
     return (
       <div>
-        Text here
+        <button onClick={this.handleClick}>{this.state.isLoggedIn ? <h1>Log out</h1> : <h1>Log in!</h1>}</button>
+        <Conditional isLoggedIn={this.state.isLoggedIn}/>
       </div>
     )
   }
