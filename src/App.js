@@ -1,5 +1,4 @@
 import React from "react";
-import Conditional from "./Conditional";
 
 /*
 Challenge: 
@@ -31,10 +30,11 @@ class App extends React.Component {
 
   render() {
     let textButton = this.state.isLoggedIn ? "LOG OUT" : "LOG IN"
+    let textDisplay = this.state.isLoggedIn ? "Logged in" : "Logged out"
     return (
       <div>
         <button onClick={this.handleClick}>{textButton}</button>
-        <Conditional isLoggedIn={this.state.isLoggedIn}/>
+        <h1>{textDisplay}</h1>
       </div>
     )
   }
