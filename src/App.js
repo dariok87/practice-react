@@ -25,7 +25,7 @@ class App extends React.Component {
     const text = this.state.loading ? "loading..." : this.state.character.name
     return (
       <div>
-        {text}
+        <h1>{text}</h1>
       </div>
     )
   }
