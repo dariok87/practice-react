@@ -6,7 +6,8 @@ class App extends React.Component {
     this.state = {
       firstName: "",
       lastName: "",
-      isFriendly: true
+      isFriendly: true,
+      gender: ""
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -35,7 +36,10 @@ class App extends React.Component {
           onChange={this.handleChange}
         />
         <br />
-        <textarea value={"some default value"}/>
+        <textarea 
+        value={"some default value"}
+        onChange={this.handleChange}
+        />
         <br />
         <input 
           type="checkbox" 
@@ -43,8 +47,25 @@ class App extends React.Component {
           checked={this.state.isFriendly}
           onChange={this.handleChange}
         />
+        <br />
+        <input 
+          type="radio" 
+          name="gender"
+          value="male"
+          checked={this.state.gender === "male"}
+          onChange={this.handleChange}
+        /> Male
+        <br />
+        <input 
+          type="radio" 
+          name="gender"
+          value="female"
+          checked={this.state.gender === "female"}
+          onChange={this.handleChange}
+        /> Female
 
         <h1>{this.state.firstName} {this.state.lastName}</h1>
+        <h2>You are a {this.state.gender}</h2>
       </form>
     )
   }
