@@ -11,15 +11,17 @@ class App extends React.Component {
 
   handleChange(event) {
     this.setState({
-      firstName: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
    render() {
     return (
       <form>
-        <input type="text" placeholder="First Name" onChange={this.handleChange} />
-        <h1>{this.state.firstName}</h1>
+        <input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange} />
+        <br />
+        <input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange} />
+        <h1>{this.state.firstName} {this.state.lastName}</h1>
       </form>
     )
   }
