@@ -5,14 +5,15 @@ class App extends React.Component {
     super()
     this.state = {
       firstName: "",
-      lastName: ""
+      lastName: "",
+      isFriendly: true
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange(event) {
-    const {name, value} = event.target
-    this.setState({
+    const {name, value, type, checked} = event.target
+    type === "checkbox" ? this.setState({[name]: checked}) : this.setState({
       [name]: value
     })
   }
@@ -35,6 +36,16 @@ class App extends React.Component {
           placeholder="Last Name" 
           onChange={this.handleChange}
         />
+        <br />
+        <textarea value={"some default value"}/>
+        <br />
+        <input 
+          type="checkbox" 
+          name="isFriendly"
+          checked={this.state.isFriendly}
+          onChange={this.handleChange}
+        />
+
         <h1>{this.state.firstName} {this.state.lastName}</h1>
       </form>
     )
