@@ -8,9 +8,9 @@ class App extends React.Component {
 
    render() {
     return (
-      <div>
-        Code goes here
-      </div>
+      <form>
+        <input type="text" placeholder="First Name" />
+      </form>
     )
   }
 }
