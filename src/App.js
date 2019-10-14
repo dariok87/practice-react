@@ -7,7 +7,8 @@ class App extends React.Component {
       firstName: "",
       lastName: "",
       isFriendly: true,
-      gender: ""
+      gender: "",
+      favColor: "blue"
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -63,9 +64,20 @@ class App extends React.Component {
           checked={this.state.gender === "female"}
           onChange={this.handleChange}
         /> Female
+        <br />
+        <select 
+          value={this.state.favColor}
+          onChange={this.handleChange}
+          name="favColor"
+        >
+          <option value="blue">Blue</option>
+          <option value="red">Red</option>
+          <option value="yellow">Yellow</option>
+        </select>
 
         <h1>{this.state.firstName} {this.state.lastName}</h1>
         <h2>You are a {this.state.gender}</h2>
+        <h3>Your favorite color is {this.state.favColor}</h3>
       </form>
     )
   }
